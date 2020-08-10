@@ -4,23 +4,29 @@ import java.util.Arrays;
 
 public class HomeWork36 {
     public static void main(String[] args) {
-        // System.out.println(Arrays.toString(cyrillic()));
+        // System.out.println(Arrays.toString(cyrillic0()));
+        //System.out.println("--------------");
+        System.out.println(Arrays.toString(cyrillic1()));
+        System.out.println("--------------");
         System.out.println(Arrays.toString(cyrillic2()));
 
     }
 
-    public static char[] cyrillic() {
-        //    char[] output=new char[64];
-        //  for (char i = 'А'; i <= 'я'; i++) {
-        //    output[i-'А']=i;
-        //}
-        char[] a = new char[64];
+    public static char[] cyrillic0() {
+        char[] array = new char[64];
         for (int i = 0; i < 64; i++) {
-            a[i] = (char) ('А' + i);
+            array[i] = (char) ('А' + i);
         }
 
+        return array;
+    }
 
-        return a;
+    public static char[] cyrillic1() {
+        char[] output = new char[64];
+        for (char i = 'А'; i <= 'я'; i++) {
+            output[i - 'А'] = i;
+        }
+        return output;
     }
 
     public static char[] cyrillic2() {
@@ -37,4 +43,14 @@ public class HomeWork36 {
         }
         return a;
     }
-}
+
+    public static String shuffle(String text) {
+        char[] characters = text.toCharArray();
+        for (int i = 0; i < characters.length; i++) {
+            int randomIndex = (int) (Math.random() * characters.length);
+            char temp = characters[i];
+            characters[i] = characters[randomIndex];
+            characters[randomIndex] = temp;
+        }
+        return new String(characters);
+    }
