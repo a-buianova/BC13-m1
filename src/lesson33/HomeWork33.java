@@ -211,21 +211,15 @@ public class HomeWork33 {
     }
 
     public static int[] front11(int[] a, int[] b) {
-        int[] one = new int[1];
-        int[] two = new int[2];
         if (a.length == 0 && b.length == 0) {
             return a;
         }
         if (a.length >= 1 && b.length == 0) {
-            one[0] = a[0];
-            return one;
+            return new int[]{a[0]};
         }
         if (a.length >= 1) {
-            two[0] = a[0];
-            two[1] = b[0];
-            return two;
+            return new int[]{a[0], b[0]};
         }
-        one[0] = b[0];
-        return one;
+        return new int[]{b[0]};
     }
 }
