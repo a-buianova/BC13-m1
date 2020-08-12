@@ -55,7 +55,7 @@ public class HomeWork36 {
         int i = 0;
         while (i < size) {
             int randomIndex = (int) (Math.random() * size);
-            if (input[randomIndex] != 0) {
+            if (input[randomIndex] != 0 && input[randomIndex] != i) {
                 output[i] = input[randomIndex];
                 input[randomIndex] = 0;
                 i++;
